@@ -1,14 +1,9 @@
 def solution(ineq, eq, n, m):
-    if n==m:
-        if eq=="=":
-            return 1
-        else:
-            return 0
-    
-    elif n>m:
-        if ineq==">": return 1
-        else: return 0
-
+    if ineq==">" and eq=="=":
+        return int(n>=m)
+    elif ineq=="<" and eq=="=":
+        return int(n<=m)
+    elif ineq==">":
+        return int(n>m)
     else:
-        if ineq=="<": return 1
-        else: return 0
+        return int(n<m)
