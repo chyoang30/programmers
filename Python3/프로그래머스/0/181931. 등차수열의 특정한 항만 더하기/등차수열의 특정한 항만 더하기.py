@@ -1,8 +1,9 @@
 def solution(a, d, included):
     answer = 0
+    num = a
     
-    for i, v in enumerate(included):
-        num = a + d*i
+    for v in included:
         if(v): answer += num
+        num += d
     
     return answer
