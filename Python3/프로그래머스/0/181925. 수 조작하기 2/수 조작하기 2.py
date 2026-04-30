@@ -1,12 +1,6 @@
 def solution(numLog):
-    answer = ''
-    
-    for i in range(0, len(numLog)-1):
-        x = numLog[i+1]-numLog[i]
-        
-        if x==1: answer += 'w'
-        elif x==-1: answer += 's'
-        elif x==10: answer += 'd'
-        else: answer += 'a'
-    
-    return answer
+    mapping = {1: 'w', -1: 's', 10: 'd', -10: 'a'}
+    key = []
+    for i in range(len(numLog)-1):
+        key.append(mapping[numLog[i+1]-numLog[i]])
+    return ''.join(key)
