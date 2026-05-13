@@ -1,14 +1,12 @@
 #include <vector>
 #include <iostream>
-#include <math.h>
 using namespace std;
 
 // 소수 여부를 확인하는 함수
 bool isPrime(int n){
     if(n==1) return false;
     int answer = 0;
-    int sqrt_n = int(sqrt(n));
-    for(int i=2;i<=sqrt_n;i++){
+    for(int i=2;i*i<=n;i++){
         if(n%i==0) answer++;
     }
     if(answer==0) return true;
@@ -33,9 +31,6 @@ int solution(vector<int> nums) {
             }
         }
     }
-
-    // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
-    // cout << "Hello Cpp" << endl;
 
     return answer;
 }
